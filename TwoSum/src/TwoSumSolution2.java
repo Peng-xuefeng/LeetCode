@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+//通过哈希表来快速查找
 public class TwoSumSolution2 {
 	public static void main(String args[]) {
 		Solution2 s = new Solution2();
