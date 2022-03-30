@@ -4,29 +4,27 @@ import java.util.Arrays;
 public class Solution2 {
     public static void main(String args[]) {
     TwoSumIISolution2 two = new TwoSumIISolution2();
-  	   int[] input = new int[] {2,7,11,15};
-  	   System.out.println(Arrays.toString(two.twoSum(input, 9)));
+    int[] ar = new int[] {6,7,18,9,10};
+  	System.out.println(Arrays.toString(two.bubleSort(ar)));
+  	   
     }
 }
 
 class TwoSumIISolution2{
-	public int[] twoSum(int[] numbers, int target) {
-		int[] ns = new int[2];
-		int start = 0;
-		int end = numbers.length-1;
-		while(start <= end) {
-			int sum = numbers[start]+numbers[end];
-			if(sum == target) {
-				ns[0]=start+1;
-				ns[1]=end+1;
-				return ns;
-			}else if(sum < target) {
-				start++;
-			}else
-			{
-				end--;
+	public int[] bubleSort(int[] nums) {
+		for(int i=0;i<nums.length;i++) {
+			for(int j=0; j<nums.length-1;j++) {
+				if(nums[j]<nums[j+1]) {
+					this.swap(nums,j);
+				}
 			}
 		}
-		return ns;
+	   return nums;
+	}
+	public void swap(int[] nums,int j) {
+		int temp;
+		temp = nums[j];
+		nums[j]=nums[j+1];
+		nums[j+1]=temp;
 	}
 }
